@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VISDBModelStoreContainer" CdmEntityContainer="VISDBContext">
+    <EntitySetMapping Name="Voters">
+      <EntityTypeMapping TypeName="VISDBModel.Voter">
+        <MappingFragment StoreEntitySet="Voters">
+          <ScalarProperty Name="VoterId" ColumnName="VoterId" />
+          <ScalarProperty Name="VoterName" ColumnName="VoterName" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AdminUsers">
+      <EntityTypeMapping TypeName="VISDBModel.AdminUser">
+        <MappingFragment StoreEntitySet="AdminUsers">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

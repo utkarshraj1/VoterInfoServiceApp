@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VISDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Voter">
+    <Key>
+      <PropertyRef Name="VoterId" />
+    </Key>
+    <Property Name="VoterId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="VoterName" Type="String" MaxLength="75" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Age" Type="Int32" Nullable="false" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="Gender" Type="String" MaxLength="6" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="State" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EmailId" Type="String" MaxLength="75" FixedLength="false" Unicode="false" />
+    <Property Name="MobileNumber" Type="Int64" />
+  </EntityType>
+  <EntityType Name="AdminUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmailId" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="VISDBContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Voters" EntityType="Self.Voter" />
+    <EntitySet Name="AdminUsers" EntityType="Self.AdminUser" />
+  </EntityContainer>
+</Schema>

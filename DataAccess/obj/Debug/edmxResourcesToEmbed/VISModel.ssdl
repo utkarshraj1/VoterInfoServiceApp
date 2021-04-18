@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VISDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'VISDB.dbo.AdminUsers' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AdminUsers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmailId" Type="varchar" MaxLength="35" />
+    <Property Name="Password" Type="varchar" MaxLength="35" />
+  </EntityType>
+  <EntityType Name="Voters">
+    <Key>
+      <PropertyRef Name="VoterId" />
+    </Key>
+    <Property Name="VoterId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VoterName" Type="varchar" MaxLength="75" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="Gender" Type="varchar" MaxLength="6" Nullable="false" />
+    <Property Name="City" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="State" Type="varchar" MaxLength="100" />
+    <Property Name="EmailId" Type="varchar" MaxLength="75" />
+    <Property Name="MobileNumber" Type="bigint" />
+  </EntityType>
+  <EntityContainer Name="VISDBModelStoreContainer">
+    <EntitySet Name="Voters" EntityType="Self.Voters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AdminUsers" EntityType="Self.AdminUsers" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AdminUsers].[ID] AS [ID], 
+    [AdminUsers].[EmailId] AS [EmailId], 
+    [AdminUsers].[Password] AS [Password]
+    FROM [dbo].[AdminUsers] AS [AdminUsers]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>
