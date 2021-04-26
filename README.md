@@ -7,3 +7,9 @@ The Database file is not included in this solution. It should be made in databas
 
 Thanks,
 Utkarsh
+
+(Voter table column details)
+![image](https://user-images.githubusercontent.com/68807205/116056816-d47c7500-a69b-11eb-9f7a-19b5927d3ef6.png)
+
+(AdminUser table column details)
+![image](https://user-images.githubusercontent.com/68807205/116056949-f2e27080-a69b-11eb-86e3-dd96aaf0b895.png)
